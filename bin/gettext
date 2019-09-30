@@ -3,7 +3,12 @@
 
 var glob = require("glob");
 var fs = require('fs');
-var argv = require('minimist')(process.argv);
+var argv = require('minimist')(process.argv, {
+	boolean: ['line-numbers'],
+	default: {
+		'line-numbers' : true
+	}
+});
 var Extractor = require('angular-gettext-tools').Extractor;
 var Compiler = require('angular-gettext-tools').Compiler;
 
